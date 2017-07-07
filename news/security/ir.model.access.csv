@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tmc_news_manager,tmc.news.manager,model_tmc_news,group_manager,1,1,1,1
+access_tmc_news_user,tmc.news.user,model_tmc_news,group_user,1,1,1,1

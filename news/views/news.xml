@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- SEARCH VIEW -->
+    <record id="view_news_news_filter"
+            model="ir.ui.view">
+        <field name="name">tmc.news.select</field>
+        <field name="model">tmc.news</field>
+        <field name="arch"
+               type="xml">
+            <search string="Search News">
+                <field name="name"
+                       string="Title" />
+                <field name="description"
+                       string="Description" />
+            </search>
+        </field>
+    </record>
+
+    <!-- FORMVIEW -->
+    <record id="view_news_news_form"
+            model="ir.ui.view">
+        <field name="name">tmc.news.form</field>
+        <field name="model">tmc.news</field>
+        <field name="arch"
+               type="xml">
+            <form>
+                <header>
+                    <button name="action_draft"
+                            type="object"
+                            string="to Draft"
+                            states="published" />
+                    <button name="action_publish"
+                            type="object"
+                            string="Publish"
+                            states="draft"
+                            class="oe_highlight" />
+                    <field name="state"
+                           widget="statusbar" />
+                </header>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="name"
+                                placeholder="Title..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="create_date"
+                                   readonly="1" />
+                            <field name="write_date"
+                                   readonly="1" />
+                            <field name="date_deadline" />
+                        </group>
+                        <div>
+                            <group>
+                                <field name="important" />
+                            </group>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="description" />
+                    </group>
+                    <group>
+                        <field name="link"
+                               class="oe_link" />
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <!-- TREEVIEW -->
+    <record id="view_news_news_tree"
+            model="ir.ui.view">
+        <field name="name">tmc.news.tree</field>
+        <field name="model">tmc.news</field>
+        <field name="arch"
+               type="xml">
+            <tree colors="blue:state=='draft';red:date_deadline &lt; current_date">
+                <field name="name" />
+                <field name="create_date" />
+                <field name="write_date" />
+                <field name="date_deadline" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record model="ir.actions.act_window"
+            id="news_list_action">
+        <field name="name">News</field>
+        <field name="res_model">tmc.news</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
