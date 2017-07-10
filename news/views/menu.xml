@@ -4,7 +4,7 @@
     <menuitem name="News"
               id="main_tmc_news"
               sequence="10"
-              groups="group_user"
-              action="news_list_action" />
+              action="news_list_action"
+              groups="group_manager,group_user,group_read_only" />
 
 </odoo>
