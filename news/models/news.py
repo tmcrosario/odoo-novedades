@@ -46,16 +46,19 @@ class News(models.Model):
         default=False
     )
 
-    @api.one
+    @api.multi
     def action_draft(self):
+        self.ensure_one()
         self.state = 'draft'
 
-    @api.one
+    @api.multi
     def action_publish(self):
+        self.ensure_one()
         self.state = 'published'
 
-    @api.one
+    @api.multi
     def get_news(self):
+        self.ensure_one()
         res = {}
         res['title'] = self.name
         res['description'] = self.description
