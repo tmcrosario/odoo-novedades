@@ -46,6 +46,10 @@ class News(models.Model):
         default=False
     )
 
+    office_id = fields.Many2one(
+        comodel_name='tmc.hr.office'
+    )
+
     @api.multi
     def action_draft(self):
         self.ensure_one()

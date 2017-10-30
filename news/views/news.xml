@@ -51,10 +51,11 @@
                                    readonly="1" />
                             <field name="write_date"
                                    readonly="1" />
-                            <field name="date_deadline" />
                         </group>
                         <div>
                             <group>
+                                <field name="date_deadline" />
+                                <field name="office_id" />
                                 <field name="important" />
                             </group>
                         </div>
@@ -84,6 +85,7 @@
                 <field name="create_date" />
                 <field name="write_date" />
                 <field name="date_deadline" />
+                <field name="office_id" />
                 <field name="state" />
             </tree>
         </field>
