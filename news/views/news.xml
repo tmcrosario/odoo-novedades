@@ -8,7 +8,7 @@
         <field name="model">tmc.news</field>
         <field name="arch"
                type="xml">
-            <search string="Search News">
+            <search>
                 <field name="name"
                        string="Title" />
                 <field name="description"
