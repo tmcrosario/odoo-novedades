@@ -80,7 +80,8 @@
         <field name="model">tmc.news</field>
         <field name="arch"
                type="xml">
-            <tree colors="blue:state=='draft';red:date_deadline &lt; current_date">
+            <tree decoration-it="state=='draft'"
+                  decoration-danger="date_deadline &lt; current_date">
                 <field name="name" />
                 <field name="create_date" />
                 <field name="write_date" />
