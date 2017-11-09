@@ -62,18 +62,18 @@ class News(models.Model):
 
     @api.multi
     def get_news(self):
-        self.ensure_one()
-        res = {}
-        res['title'] = self.name
-        res['description'] = self.description
+        for new in self:
+            res = {}
+            res['title'] = new.name
+            res['description'] = new.description
 
-        create_date = datetime.strptime(
-            self.create_date, '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%y %H:%M')
-        res['create_date'] = create_date
+            create_date = datetime.strptime(
+                new.create_date, '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%y %H:%M')
+            res['create_date'] = create_date
 
-        if self.link:
-            res['link'] = self.link
-        if self.important:
-            res['important'] = self.important
+            if new.link:
+                res['link'] = new.link
+            if new.important:
+                res['important'] = new.important
 
-        return res
+            return res
