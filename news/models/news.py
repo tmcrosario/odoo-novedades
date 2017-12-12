@@ -37,6 +37,10 @@ class News(models.Model):
         size=120
     )
 
+    link_description = fields.Char(
+        size=30
+    )
+
     date_deadline = fields.Date(
         required=True,
         default=fields.Date.context_today
@@ -48,6 +52,10 @@ class News(models.Model):
 
     office_id = fields.Many2one(
         comodel_name='tmc.hr.office'
+    )
+
+    office_abbreviation = fields.Char(
+        related='office_id.abbreviation'
     )
 
     @api.multi
@@ -67,6 +75,7 @@ class News(models.Model):
             obj_dict = {}
             obj_dict['title'] = obj.name
             obj_dict['description'] = obj.description
+            obj_dict['office'] = obj.office_abbreviation
 
             create_date = datetime.strptime(
                 obj.create_date, '%Y-%m-%d %H:%M:%S').strftime('%d-%m-%y %H:%M')
@@ -74,6 +83,7 @@ class News(models.Model):
 
             if obj.link:
                 obj_dict['link'] = obj.link
+                obj_dict['link_description'] = obj.link_description
             if obj.important:
                 obj_dict['important'] = obj.important
             res.append(obj_dict)

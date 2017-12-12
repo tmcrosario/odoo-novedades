@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-03 18:47+0000\n"
-"PO-Revision-Date: 2017-11-03 18:47+0000\n"
+"POT-Creation-Date: 2017-12-12 18:34+0000\n"
+"PO-Revision-Date: 2017-12-12 18:34+0000\n"
 "Last-Translator: Lisandro <lisandrogallo@tmcrosario.gov.ar>, 2017\n"
 "Language-Team: Spanish (Argentina) (https://www.transifex.com/tmcrosario/teams/73663/es_AR/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Language: es_AR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: news
+#: model:ir.model.fields,field_description:news.field_tmc_news_office_abbreviation
+msgid "Abbreviation"
+msgstr ""
 
 #. module: news
 #: model:ir.model.fields,field_description:news.field_tmc_news_create_uid
@@ -78,6 +83,11 @@ msgstr "Fecha de Modificación"
 #: model:ir.model.fields,field_description:news.field_tmc_news_link
 msgid "Link"
 msgstr "Enlace"
+
+#. module: news
+#: model:ir.model.fields,field_description:news.field_tmc_news_link_description
+msgid "Link description"
+msgstr "Descripción del Enlace"
 
 #. module: news
 #: model:res.groups,name:news.group_manager

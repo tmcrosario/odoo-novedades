@@ -61,11 +61,15 @@
                         </div>
                     </group>
                     <group>
-                        <field name="description" />
-                    </group>
-                    <group>
-                        <field name="link"
-                               class="oe_link" />
+                        <group>
+                            <field name="description" />
+                        </group>
+                        <group>
+                            <field name="link"
+                                   class="oe_link" />
+                            <field name="link_description"
+                                   attrs="{'invisible': [('link', '=', False)], 'required': [('link', '!=', False)]}" />
+                        </group>
                     </group>
                 </sheet>
 
