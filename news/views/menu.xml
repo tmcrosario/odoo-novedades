@@ -3,7 +3,7 @@
 
     <menuitem name="News"
               id="main_tmc_news"
-              sequence="10"
+              sequence="90"
               action="news_list_action"
               groups="group_manager,group_user,group_read_only" />
 
