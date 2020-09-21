@@ -1,10 +1,6 @@
 # Odoo TMC Novedades
 
-Odoo module for TMC internal web portal news.
-
-## Translation Status
-
-[![Transifex Status](https://www.transifex.com/tmcrosario/odoo-novedades-10/)](https://www.transifex.com/tmcrosario/odoo-novedades-10/)
+Portal interno de novedades. Tribunal Municipal de Cuentas de Rosario.
 
 ## License
 
@@ -16,4 +12,4 @@ You should have received a copy of the GNU Affero General Public License along w
 
 ----
 
-<img alt="TMC Rosario" src="http://www.tmcrosario.gov.ar/images/tmc_nuevo.png"/>
+<img align="left" src="https://iili.io/2ARo1R.png"/>
